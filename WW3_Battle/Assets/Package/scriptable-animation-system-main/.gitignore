@@ -1,0 +1,15 @@
+.idea/
+Build/
+Library/
+Logs/
+obj/
+Temp/
+UserSettings/
+Assets/KINEMATION/
+Packages/com.unity.asset-store-tools/
+*.csproj
+*.sln
+Assets/KINEMATION.meta
+Assets/TextMesh Pro
+Assets/TextMesh Pro.meta
+Screenshots/
