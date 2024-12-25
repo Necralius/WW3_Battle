@@ -61,6 +61,8 @@ sysinfo.txt
 *.unitypackage
 *.unitypackage.meta
 *.app
+*FirebaseCppApp-12_5_0.bundle
+*FirebaseCppApp-12_5_0.so
 
 # Crashlytics generated file
 crashlytics-build.properties

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "491311999736",
+    "project_id": "ww3-battle",
+    "storage_bucket": "ww3-battle.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491311999736:android:6b1eb6e05b901dbcada90d",
+        "android_client_info": {
+          "package_name": "com.nekrabyte.ww3battle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClmM6V7RkA_cS-uubdkpbTByN8e1Q-e5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
