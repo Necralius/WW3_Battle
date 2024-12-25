@@ -61,6 +61,7 @@ sysinfo.txt
 *.unitypackage
 *.unitypackage.meta
 *.app
+# Remove later and add these files to Git LFS
 *FirebaseCppApp-12_5_0.bundle
 *FirebaseCppApp-12_5_0.so
 
