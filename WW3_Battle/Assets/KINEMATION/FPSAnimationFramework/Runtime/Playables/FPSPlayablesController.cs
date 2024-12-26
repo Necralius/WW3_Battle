@@ -4,14 +4,14 @@ using KINEMATION.FPSAnimationFramework.Runtime.Core;
 using KINEMATION.KAnimationCore.Runtime.Attributes;
 using KINEMATION.KAnimationCore.Runtime.Input;
 
-using UnityEditor.Playables;
 using UnityEngine;
 
 using UnityEngine.Animations;
 using UnityEngine.Playables;
 
-//todo: DO NOT SHIP.
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace KINEMATION.FPSAnimationFramework.Runtime.Playables
 {

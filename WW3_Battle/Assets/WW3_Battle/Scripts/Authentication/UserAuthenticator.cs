@@ -36,8 +36,6 @@ public class UserAuthenticator : MonoBehaviour
             app  = FirebaseApp.DefaultInstance;
             auth = FirebaseAuth.DefaultInstance;
 
-            Debug.Log(task.Result);
-
             if (task.Result == DependencyStatus.Available)
             {
                 app.Options.DatabaseUrl = new System.Uri("https://ww3-battle-default-rtdb.firebaseio.com/");
@@ -67,6 +65,9 @@ public class UserAuthenticator : MonoBehaviour
             if (task.IsFaulted)
             {
                 Debug.LogError("Login task encountered an error: " + task.Exception);
+                Debug.Log(task.Result.AdditionalUserInfo);
+                Debug.Log(task.Result);
+                GameManager.Instance.LayoutManager.OpenPanel("Login");
                 return;
             }
 
@@ -76,8 +77,7 @@ public class UserAuthenticator : MonoBehaviour
 
             _onSuccessfullLogin?.Invoke();
 
-            _layoutManager?.OpenPanel("Lobby");
-            OnlineGameManager.Instance?.ConnectToServer();
+            MultiplayerGameManager.Instance.ConnectToServer();
 
             GetUsername(result.User.UserId);
         });

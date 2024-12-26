@@ -31,7 +31,7 @@ public class Layout
 {
     public string     Name  = "Panel";
     public GameObject Panel = null;
-    public float      Speed = 1f;
+    public float      Speed = 0.2f;
     public UnityEvent OnActivate;
     public UnityEvent OnDeactivate;
 
