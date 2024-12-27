@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "491311999736",
+    "firebase_url": "https://ww3-battle-default-rtdb.firebaseio.com",
     "project_id": "ww3-battle",
     "storage_bucket": "ww3-battle.firebasestorage.app"
   },

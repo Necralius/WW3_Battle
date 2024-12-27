@@ -23,6 +23,13 @@ public class PlayerListView : MonoBehaviour
     {
         _roomName.text = roomName;
         _startGameButton.gameObject.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
+
+        UpdateContent();
+    }
+
+    public void SetOwner()
+    {
+        _startGameButton.gameObject.SetActive(true);
     }
 
     public void UpdateContent()

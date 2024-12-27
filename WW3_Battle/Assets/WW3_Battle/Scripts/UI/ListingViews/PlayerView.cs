@@ -13,7 +13,7 @@ public class PlayerView : MonoBehaviour
     public void SetUp(PlayerData data)
     {
         _name.    text = data.Name;
-        _level.   text = data.Level.ToString();
+        _level.   text = "Lvl." + data.Level.ToString();
     }
 }
 

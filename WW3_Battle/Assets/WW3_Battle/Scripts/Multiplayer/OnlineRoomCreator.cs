@@ -24,7 +24,8 @@ public class OnlineRoomCreator : MonoBehaviour
             {
                 PhotonNetwork.CreateRoom(_roomName.text, new Photon.Realtime.RoomOptions
                 {
-                    MaxPlayers = int.Parse(_roomMaxPlayers.text)
+                    MaxPlayers = int.Parse(_roomMaxPlayers.text),
+                    EmptyRoomTtl = 10000
                 });
             }
         }

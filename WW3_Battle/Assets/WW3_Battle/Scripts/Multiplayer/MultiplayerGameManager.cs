@@ -49,7 +49,7 @@ public class MultiplayerGameManager : MonoBehaviourPunCallbacks
         if (_debug) 
             Debug.Log("Connected to server!");
         GameManager.Instance?.LayoutManager?.OpenPanel("Lobby");
-        PhotonNetwork.LocalPlayer.NickName = $"Player{Random.Range(0, 1000)}";
+        PhotonNetwork.LocalPlayer.NickName = $"{SessionManager.Instance.SessionData.Username}";
 
         PhotonNetwork.JoinLobby();
         base.OnConnectedToMaster();

@@ -34,17 +34,21 @@ public class OnlineLobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        if (roomList == null || roomList.Count == 0)
-            return;
-
         List<RoomData> data = new List<RoomData>();
 
-        foreach(RoomInfo room in roomList)
-            data.Add(new RoomData(room));
+        if (roomList.Count > 0)
+            foreach(RoomInfo room in roomList)
+                data.Add(new RoomData(room));
 
         RoomListView.UpdateContent(data);
-
         base.OnRoomListUpdate(roomList);
+    }
+
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        if (newMasterClient.IsLocal)
+            PlayerListView.SetOwner();
+        base.OnMasterClientSwitched(newMasterClient);
     }
 
     public override void OnJoinedRoom()
