@@ -15,11 +15,16 @@ public class SessionManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
-            Destroy(Instance.gameObject);
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
     #endregion
 

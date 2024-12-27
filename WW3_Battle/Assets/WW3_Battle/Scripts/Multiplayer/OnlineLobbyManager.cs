@@ -40,14 +40,13 @@ public class OnlineLobbyManager : MonoBehaviourPunCallbacks
             foreach(RoomInfo room in roomList)
                 data.Add(new RoomData(room));
 
-        RoomListView.UpdateContent(data);
+        RoomListView?.UpdateContent(data);
         base.OnRoomListUpdate(roomList);
     }
 
     public override void OnMasterClientSwitched(Player newMasterClient)
     {
-        if (newMasterClient.IsLocal)
-            PlayerListView.SetOwner();
+        PlayerListView?.SetOwner();
         base.OnMasterClientSwitched(newMasterClient);
     }
 
@@ -56,7 +55,8 @@ public class OnlineLobbyManager : MonoBehaviourPunCallbacks
         Debug.Log($"Joined on room: {PhotonNetwork.CurrentRoom.Name}!");
 
         GameManager.Instance?.LayoutManager?.OpenPanel("InsideRoom");
-        PlayerListView.SetUp(PhotonNetwork.CurrentRoom.Name);
+        PlayerListView?.SetOwner();
+        PlayerListView?.SetUp();
 
         base.OnJoinedRoom();
     }

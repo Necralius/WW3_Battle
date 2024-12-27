@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MenuSystem     _menuSystem     = null;
     [SerializeField] private LayoutManager  _layoutManager  = null;
 
+    public bool InGame = false;
+
     public MenuSystem MenuSystem
     {
         get

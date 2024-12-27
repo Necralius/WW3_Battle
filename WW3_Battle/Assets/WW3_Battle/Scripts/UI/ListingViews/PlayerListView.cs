@@ -1,5 +1,4 @@
 using Photon.Pun;
-using Photon.Realtime;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,19 +16,23 @@ public class PlayerListView : MonoBehaviour
     
     private List<PlayerData> playersData = new List<PlayerData>();
 
-    private void Start() => _leaveButton.onClick.AddListener(() => LeftRoom());
-
-    public void SetUp(string roomName)
+    private void Start()
     {
-        _roomName.text = roomName;
-        _startGameButton.gameObject.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
+        _leaveButton?.    onClick?.AddListener(() => LeftRoom());
+        _startGameButton?.onClick?.AddListener(() => MultiplayerGameManager.Instance?.StartGame());
+        
+    }
+
+    public void SetUp()
+    {
+        _roomName.text = PhotonNetwork.CurrentRoom.Name;
 
         UpdateContent();
     }
 
     public void SetOwner()
     {
-        _startGameButton.gameObject.SetActive(true);
+        _startGameButton?.gameObject.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
     }
 
     public void UpdateContent()
